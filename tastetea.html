@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <!-- 引入网站图标 -->
+   <link rel="icon" href="/myw/ebuy_icon.png" type="image/x-icon" />
+   <link
+     rel="shortcut icon"
+     href="/myw/ebuy_icon.png"
+     type="image/x-icon"
+   />
+    <!-- 引入Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <!-- 引入Animate.css -->
+    <head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+    </head>
+    <!-- 引入Bootstrap JS和依赖的JQuery、Popper.js -->
+    <script src="../bootstrap-4.6.2/jquery/jquery-3.7.1.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      /* 为返回顶部按钮添加一些样式 */
+      #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        border: none;
+        outline: none;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      /* 为图片鼠标悬停添加样式 */
+      .hover-zoom {
+        transition: transform 1s ease;
+        cursor: pointer;
+      }
+
+      .hover-zoom:hover {
+        transform: scale(1.1);
+      }
+      /* 添加评论样式设置 */
+      #outside {
+        overflow: hidden;
+        padding-bottom: 15px;
+      }
+
+      #outside h4 {
+        margin: 15px auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e7eaee;
+        font-family: '宋体', sans-serif;
+      }
+
+      #outside .comment1 {
+        width: 95%;
+        margin: 10px auto;
+        color: #bbbbbb;
+        font-size: 12px;
+        border-bottom: 1px dashed #e7eaee;
+        font-family: '宋体', sans-serif;
+      }
+
+      #outside .comment1 time {
+        float: right;
+      }
+
+      #outside .comment1 span {
+        color: #5979b2;
+        margin-left: 3px;
+        font-weight: bold;
+      }
+
+      #outside .comment1 p {
+        font-size: 14px;
+        color: black;
+      }
+
+      #outside h5 {
+        color: #404e73;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: '宋体', sans-serif;
+      }
+
+      #outside #addComment {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 12px;
+        color: #bbbbbb;
+      }
+
+      #outside #name {
+        width: 200px;
+        border: 1px solid #d9e2ef;
+      }
+
+      #outside #Content {
+        height: 100px;
+        resize: none;
+        border: 1px solid #d9e2ef;
+        vertical-align: text-top;
+      }
+
+      #outside button {
+        color: white;
+        border: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航条 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand text-success" href="#">茶文化介绍</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="index.html"
+                >首页 <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="#">文化起源</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="teatype.html"
+                >茶的种类</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="tastetea.html"
+                >品茶鉴茶</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="#">在线选购</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </form>
+          <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link text-success" href="login.html">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="reg.html">Sign up</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                王羲之
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">个人中心</a>
+                <a class="dropdown-item" href="#">退出登录</a>
+                <a class="dropdown-item" href="#">重置密码</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="admin.html">后台管理</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 10px">
+      <!-- 内嵌外部视频 -->
+      <div class="row">
+        <div class="col-md-8 embed-responsive embed-responsive-16by9">
+          <iframe
+            src="//player.bilibili.com/player.html?isOutside=true&aid=516100951&bvid=BV1Ng411v76E&cid=847259974&p=1"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8" style="margin-top: 15px">
+          <div id="outside">
+            <h4 class="text-success">最新评论</h4>
+            <!-- 评论显示区 -->
+            <div id="comment">
+              <div id="comment1" class="comment1">
+                网友<span>nickname1</span>
+                <time>2023年11月4日 22:19:13</time>
+                <p class="mt-2">学习JavaScript！</p>
+              </div>
+            </div>
+            <h5 class="text-success">发表评论</h5>
+            <!-- 添加评论 -->
+            <div id="addComment">
+              <form>
+                <div class="form-group">
+                  <label for="name">昵称</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="Content">评论内容</label>
+                  <textarea class="form-control" id="Content"></textarea>
+                </div>
+              </form>
+
+              <!-- 昵称：<input type="text" id="name" /><br /><br />
+              评论内容：<textarea id="Content"></textarea> -->
+              <button
+                class="btn btn-success float-right mt-2"
+                onclick="addComment()"
+              >
+                提交评论
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <!-- 评论添加功能 -->
+    <script type="text/javascript">
+      // 定义一个变量idNum，初始值为1
+      let idNum = 1;
+
+      // 格式化日期函数
+      function formatDate(date) {
+        // 获取年份
+        const year = date.getFullYear();
+        // 获取月份，月份从0开始，需要加1
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        // 获取日期
+        const day = String(date.getDate()).padStart(2, '0');
+        // 获取小时
+        const hours = String(date.getHours()).padStart(2, '0');
+        // 获取分钟
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        // 获取秒数
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        // 返回格式化后的日期字符串
+        return `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+      }
+
+      // 定义一个函数addComment，用于添加评论
+      function addComment() {
+        // idNum自增
+        idNum++;
+        // 获取输入框的值
+        let inputValue = document.getElementById('name').value;
+        let textValue = document.getElementById('Content').value;
+        // 如果输入框的值为空，则弹出提示框
+        if (inputValue == '' || textValue == '') {
+          alert('昵称和评论内容不能为空！');
+          return;
+        }
+        // 获取评论模板
+        let content1 = document.getElementById('comment1');
+        // 克隆评论模板
+        let newComment = content1.cloneNode(true);
+        // 设置新评论的id
+        newComment.setAttribute('id', 'comment' + idNum);
+        // 设置新评论的昵称
+        newComment.getElementsByTagName('span')[0].innerText = inputValue;
+        // 设置新评论的内容
+        newComment.getElementsByTagName('p')[0].innerText = textValue;
+        const now = new Date();
+        // 设置新评论的发表时间
+        newComment.getElementsByTagName('time')[0].innerText = formatDate(now);
+        // 获取评论容器
+        let commentDiv = document.getElementById('comment');
+        // 将新评论添加到评论容器中
+        commentDiv.appendChild(newComment);
+        // 清空输入框的值
+        document.getElementById('name').value = '';
+        document.getElementById('Content').value = '';
+      }
+    </script>
+  </body>
+</html>

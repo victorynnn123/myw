@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/myw/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+    <style>
+      .center {
+        width: 600px;
+        margin: 100px auto;
+        border: 1px solid #ddd;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="#">ebuy</a>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      >
+      <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+        <a class="nav-item nav-link" href="index.html"
+          >首页 <span class="sr-only">(current)</span></a
+        >
+        </li>
+        </li>
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item nav-link">购物车</li>
+        <li class="nav-item nav-link">我的订单</li>
+        <li class="nav-item nav-link" href="more.html">关于ebuy</li>    
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+        <a class="nav-link " href="login.html">Sign in</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link " href="reg.html">Sign up</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-toggle="dropdown"
+          aria-expanded="false"
+        >
+          账户
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">个人中心</a>
+          <a class="dropdown-item" href="#">退出登录</a>
+          <a class="dropdown-item" href="#">重置密码</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="admin.html">后台管理</a>
+        </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        />
+        <button class="btn btn-outline my-2 my-sm-0" type="submit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-search"
+          viewBox="0 0 16 16"
+        >
+          <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+          />
+        </svg>
+        </button>
+      </form>
+      </div>
+    </div>
+    </nav>
+  <body>
+    <div class="container-fluid">
+      <div class="center" style="width: 400px">
+        <h2 style="text-align: center">登录页</h2>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="code">验证码</label>
+            <div class="row">
+              <div class="col-md-8">
+                <input type="password" class="form-control" id="code" />
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="/myw/code.png"
+                  style="width: 120px; height: 38px"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/myw/jquery-3.7.1.js"></script>
+  </body>
+</html>
